@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resturant managment</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
+    
+   
+
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header>
+
+    <a href="#" class="logo"><i class="fas fa-stumbleupon"></i>BooknBook</a>
+
+    <div id="menu-bar" class="fas fa-bars"></div>
+
+    <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#bangalore">Bangalore</a>
+        <a href="#mumbai">mumbai</a>       
+        <a href="#review">review</a>
+        <a href="#login">login</a>
+    </nav>
+
+</header>
+
+<!-- header section ends -->
+{% if messages %}
+    {% for message in messages %}
+        <h2>{{message}}</h2>
+    {% endfor %}
+{% endif %}
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="content">
+        <h3>food made with love</h3>
+              <a href="#" class="btn">order now</a>
+    </div>
+
+    <div class="image">
+        <img src="home-img.png" alt="">
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- speciality section starts  -->
+
+<section class="bangalore" id="bangalore">
+
+    <h1 class="heading">  <span>bangalore</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img class="image" src="r-img-2.jpg" alt="">
+            <div class="content">                
+                <h3>Royal Andhra Spice </h3>
+                <p>Veg/Non-Veg</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <a href="#" class="btn">book a table</a>
+            </div>
+        </div>
+        <div class="box">
+            <img class="image" src="r-img-4.jpg" alt="">
+            <div class="content">                
+                <h3>Indian Paviillon Resturant</h3>
+                <p>Pure-veg</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <a href="#" class="btn">book a table</a>
+            </div>
+        </div>
+        <div class="box">
+            <img class="image" src="r-img-6.jpg" alt="">
+            <div class="content">                
+                <h3>Tandoori Cafe</h3>
+                <p>Veg/Non-veg</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <a href="#" class="btn">book a table</a>
+            </div>
+        </div>
+        <div class="box">
+            <img class="image" src="r-img-7.jpg" alt="">
+            <div class="content">                
+                <h3>President Hotel</h3>
+                <p>Pure-veg</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <a href="#" class="btn">book a table</a>
+            </div>
+        </div>
+        <div class="box">
+            <img class="image" src="r-img-8.jpg" alt="">
+            <div class="content">                
+                <h3>Barbeque Nation</h3>
+                <p>Veg/Non-Veg</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <a href="#" class="btn">book a table</a>
+            </div>
+        </div>
+        <div class="box">
+            <img class="image" src="r-img-3.jpg" alt="">
+            <div class="content">                
+                <h3>Spice Out</h3>
+                <p>Veg/Non-Veg</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <a href="#" class="btn">book a table</a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- speciality section ends -->
+
+<!-- mumbai section starts  -->
+
+<section class="mumbai" id="mumbai">
+
+    <h1 class="heading">  <span>mumbai</span></h1>
+
+    <div class="box-container">
+
+        <div class="box">            
+            <img src="p-1.jpg" alt="">
+            <h3> Burger King</h3>
+            <p>Veg/Non-Veg</p>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <a href="#" class="btn">Book a table</a>
+        </div>
+        <div class="box">            
+            <img src="r-1.jpg" alt="">
+            <h3>Smoking Fish</h3>
+            <p>Veg/Non-Veg</p>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <a href="#" class="btn">Book a Table</a>
+        </div>
+        <div class="box">            
+            <img src="r-2.jpg" alt="">
+            <h3>Denisons </h3>
+            <p>Veg</p>            
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <a href="#" class="btn">Book a table</a>
+        </div>
+        <div class="box">            
+            <img src="r-3.jpg" alt="">
+            <h3>hotel Taj</h3>
+            <p>Veg/Non-Veg</p>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <a href="#" class="btn">Book a Table</a>
+        </div>
+        <div class="box">            
+            <img src="r-4.jpg" alt="">
+            <h3>Wow Momos</h3>
+            <p>Veg/Non-Veg</p>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <a href="#" class="btn">Book a table</a>
+        </div>
+        <div class="box">            
+            <img src="r-5.jpg" alt="">
+            <h3>Dominos</h3>
+            <p>Veg/Non-Veg</p>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <a href="#" class="btn">Book a table</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- mumbai section ends -->
+
+<!-- review section starts  -->
+
+<section class="review" id="review">
+
+    <h1 class="heading"> our customers <span>reviews</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="pic1.png" alt="">
+            <h3>Audrey</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <p>By using the website to book, I have saved a lot of time in waiting for tables to get empty in the Resturant</p>
+        </div>
+        <div class="box">
+            <img src="pic2.png" alt="">
+            <h3>john deo</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>           
+        </div>
+        <div class="box">
+            <img src="pic3.png" alt="">
+            <h3>john deo</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            
+        </div>
+
+    </div>
+
+</section>
+
+<!-- review section ends -->
+
+<!-- scroll top button  -->
+<a href="#home" class="fas fa-angle-up" id="scroll-top"></a>
+
+
+<!-- custom js file link  -->
+<script src="script.js"></script>
+
+
+
+</body>
+</html>
