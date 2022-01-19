@@ -1,4 +1,5 @@
 from asyncio.windows_events import NULL
+from email.policy import default
 from re import T
 from sqlite3 import Date
 from statistics import mode
@@ -22,6 +23,7 @@ class Restaurant(models.Model):
     Phone_No = models.CharField(max_length=12)
     Table_Price = models.IntegerField()
     Type = models.CharField(max_length=25)
+    Image = models.ImageField(default=None)
 
     class Meta:
         db_table = 'Restaurant'

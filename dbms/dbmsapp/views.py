@@ -38,8 +38,12 @@ def authenticate_login(request):
                 messages.error(request,'Username doesnot exist')
                 return redirect('login')
         except:
-            return render(request,'login.html')
-    return render(request,'login.html')
+            return render(request,'authenticate_login.html')
+    return render(request,'authenticate_login.html')
 
 def main_page(request):
-    return render(request,'text.html')
+    list = Restaurant.objects.all()
+    context ={
+        'restaurants' : list
+    }
+    return render(request,'text.html',context)
