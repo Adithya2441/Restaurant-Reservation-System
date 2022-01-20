@@ -9,16 +9,23 @@ from django.contrib import messages
 def login(request):
     if request.method == "POST":
         username = request.POST.get("username")
-        obj = Register.objects.get(username=username)
-        if obj is not None:
-            messages.error(request,'User Already Exists')
-            return redirect('login')
-        else:    
+        obj = Register.objects.all()
+        list = []
+        for i in obj:
+            list.append(i.username)
+        if username not in list:
             email = request.POST.get("email")
             password1 = request.POST.get("password1")
             password2 = request.POST.get("password2")
-            obj=Register(username=username,email=email,password1=password1,password2=password2)
-            obj.save()
+            if password1==password2:
+                obj=Register(username=username,email=email,password1=password1,password2=password2)
+                obj.save()
+            else:
+                messages.error(request,'Password doesnot match')
+                return redirect('login')
+        else:
+            messages.error(request,'Username already exists')
+            return redirect('login')
     return render(request,'login.html')
 
 def authenticate_login(request):

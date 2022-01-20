@@ -84,17 +84,17 @@ class Customer(models.Model):
 
     class Meta:
         db_table = 'Customer'
-
-
+#NOT USED
 class Meal(models.Model):
     Meal_No = models.AutoField(primary_key=True)
-    Total_Price = models.IntegerField()
-    Manager_ID = models.ForeignKey(Manager,on_delete=models.CASCADE)
+    Item = models.ForeignKey(Menu_Veg,on_delete=models.CASCADE,default=None)
+    Item = models.ForeignKey(Menu_NonVeg,on_delete=models.CASCADE,default=None)
+    Quantity = models.IntegerField(default = 1)
     Customer_ID = models.ForeignKey(Customer,on_delete=models.CASCADE)
+    Manager_ID = models.ForeignKey(Manager,on_delete=models.CASCADE)
 
     class Meta:
         db_table = 'Meal'
-
 
 class Booking(models.Model):
     Booking_ID = models.AutoField(primary_key=True)
@@ -107,4 +107,36 @@ class Booking(models.Model):
 
     class Meta:
         db_table = 'Booking'
+#NOT USED
+class Meals(models.Model):
+    Meal_No = models.AutoField(primary_key=True)
+    Item = models.ForeignKey(Menu_Veg,on_delete=models.CASCADE,default=None)
+    Item = models.ForeignKey(Menu_NonVeg,on_delete=models.CASCADE,default=None)
+    Quantity = models.IntegerField(default = 1)
+    Customer_ID = models.ForeignKey(Customer,on_delete=models.CASCADE)
+    Manager_ID = models.ForeignKey(Manager,on_delete=models.CASCADE)
 
+    class Meta:
+        db_table = 'Meals'
+#Not Used
+class Meal_Order(models.Model):
+    Meal_No = models.AutoField(primary_key=True)
+    Item_Veg = models.ForeignKey(Menu_Veg,on_delete=models.CASCADE,default=None)
+    Item_NonVeg = models.ForeignKey(Menu_NonVeg,on_delete=models.CASCADE,default=None)
+    Quantity = models.IntegerField(default = 1)
+    Customer_ID = models.ForeignKey(Customer,on_delete=models.CASCADE)
+    Manager_ID = models.ForeignKey(Manager,on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = 'Meal_Order'
+
+class Meals_Order(models.Model):
+    Meal_No = models.AutoField(primary_key=True)
+    Item_Veg = models.ForeignKey(Menu_Veg,on_delete=models.CASCADE,default=None)
+    Item_NonVeg = models.ForeignKey(Menu_NonVeg,on_delete=models.CASCADE,default=None)
+    Quantity = models.IntegerField(default = 1)
+    Customer_ID = models.ForeignKey(Customer,on_delete=models.CASCADE)
+    Manager_ID = models.ForeignKey(Manager,on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = 'Meals_Order'
