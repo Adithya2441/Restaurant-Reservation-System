@@ -68,3 +68,6 @@ def book_now(request):
         'restaurants' : list1
     }
     return render(request,'index.html',context)
+
+def menu(request):
+    return render(request,'menu.html')

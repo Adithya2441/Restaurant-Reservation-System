@@ -53,6 +53,7 @@ class Menu_Veg(models.Model):
     Item_Name = models.CharField(max_length=50)
     Item_Price = models.IntegerField()
     Cuisine_Type = models.CharField(max_length=50)
+    Image = models.ImageField(default=None)
 
     class Meta:
         db_table = 'Menu_Veg'
@@ -62,7 +63,8 @@ class Menu_NonVeg(models.Model):
     Item_Name = models.CharField(max_length=50)
     Item_Price = models.IntegerField()
     Cuisine_Type = models.CharField(max_length=50)
-
+    Image = models.ImageField(default=None)
+    
     class Meta:
         db_table = 'Menu_NonVeg'
 
