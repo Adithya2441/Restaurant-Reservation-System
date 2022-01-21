@@ -57,10 +57,10 @@
 .main-form div select{
     width: 104%;
     font-family: 'Akaya Telivigala', cursive;
-    background: none;
+    background: rgb(32, 30, 30);
     border: 1px solid #ffca00;;
     font-size: 20px;
-    color: aqua;
+    color: rgb(255, 255, 255);
     outline: none;
     padding: 3px 0 3px 10px;
     margin-top: 10px;
@@ -69,7 +69,7 @@
 .main-form div span{
     width: 100%;
     font-family: 'Akaya Telivigala', cursive;
-    color: #fff;
+    color: rgb(255, 255, 255);
     font-size: 25px;
 }
 
@@ -137,7 +137,6 @@
 
 .selected::after {
   content: "";
-  background: url("img/arrow-down.svg");
   background-size: contain;
   background-repeat: no-repeat;
 

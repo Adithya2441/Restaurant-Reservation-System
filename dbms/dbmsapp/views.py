@@ -59,3 +59,12 @@ def main_page(request):
         'mumbai' : list3
     }
     return render(request,'text.html',context)
+
+def book_now(request):
+    list = Table.objects.all()
+    list1 = Restaurant.objects.all()
+    context = {
+        'tables' : list,
+        'restaurants' : list1
+    }
+    return render(request,'index.html',context)

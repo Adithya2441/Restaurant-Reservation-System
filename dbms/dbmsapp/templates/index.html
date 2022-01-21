@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/indexstyle.css">
+    <link rel="stylesheet" href="../../static/indexstyle.css">
     <title>Table booking</title>
 </head>
 
 <body class="main_bg">
     <div class="form">
         <div class="form-text">
-            <h1><span><img src="../static/images/art-1.png" alt=""></span>Book Now <span><img src="../static/images/art-1.png" alt=""></span></h1>            
+            <h1><span><img src="../../static/images/art-1.png" alt=""></span>Book Now <span><img src="../../static/images/art-1.png" alt=""></span></h1>            
         </div>
         <div class="main-form">
-            <form action="index.php" method="get">
+            <form action="index.php" method="post">
                 <div>
                     <span>Your full name ?</span>
                     <input type="text" name="name" id="name" placeholder="Write your name here..." required>
@@ -26,20 +26,18 @@
                 </div>
                 <div>
                     <!-- <---this is the select option--->
-                    <span>How many people ?</span>
+                    <span>Seats Required ?</span>
                     <select name="people" id="people" required>
                         <option value=""></option>
-                        <option value="1">1 People</option>
-                        <option value="2">2 People</option>
-                        <option value="3">3 People</option>
-                        <option value="4">4 People</option>
-                        <option value="5+">5+ people</option>
+                        {% for i in tables %}
+                        <option value="{{i}}">{{i.No_Of_Seats}}</option>
+                        {% endfor %}
                     </select>
                     <!-- <---this is the select option--->
                 </div>
                 <div>
                     <span>What time ?</span>
-                    <input type="text" name="time" id="time" placeholder="Time" required>
+                    <input type="time" name="time" id="time" placeholder="Time" required>
                 </div>
                 <div>
                     <span>What is the date ?</span>
@@ -47,98 +45,19 @@
                 </div>
                 <div>
                     <span>Your phone number ?</span>
-                    <input type="number" name="number" id="number" placeholder="Write your number here..." required>
+                    <input type="tel" name="number" id="number" placeholder="Write your number here..." required>
                 </div>
                 <div class="container">
-                    <h2>select the  Resturant</h2>
+                    <h2>Select the  Resturant</h2>
               
                     <div class="select-box">
                       <div class="options-container">
-                        <div class="option">
-                          <input
-                            type="radio"
-                            class="radio"
-                            id="automobiles"
-                            name="category"
-                          />
-                          <label for="Yard House">Yard House</label>
-                        </div>
-              
-                        <div class="option">
-                          <input type="radio" class="radio" id="film" name="category" />
-                          <label for="Blue plate">Veg Gulati</label>
-                        </div>
-              
-                        <div class="option">
-                          <input type="radio" class="radio" id="science" name="category" />
-                          <label for="hollywood cafe">hollywood cafe</label>
-                        </div>
-              
-                        <div class="option">
-                          <input type="radio" class="radio" id="art" name="category" />
-                          <label for="Occean Prime">Occean Prime</label>
-                        </div>
-              
-                        <div class="option">
-                          <input type="radio" class="radio" id="music" name="category" />
-                          <label for="Olive garden">Olive garden</label>
-                        </div>
-              
-                        <div class="option">
-                          <input type="radio" class="radio" id="travel" name="category" />
-                          <label for="The Hans Hotel">The Hans Hotel</label>
-                        </div>
-              
-                        <div class="option">
-                          <input type="radio" class="radio" id="sports" name="category" />
-                          <label for="Smoking fish">Smoking fish</label>
-                        </div>
-              
-                        <div class="option">
-                          <input type="radio" class="radio" id="news" name="category" />
-                          <label for="Denisons">Denisons</label>
-                        </div>
-              
-                        <div class="option">
-                          <input type="radio" class="radio" id="tutorials" name="category" />
-                          <label for="Hotel Taj">Hotel Taj</label>
-                        </div>
-                        <div class="option">
-                          <input type="radio" class="radio" id="tutorials" name="category" />
-                          <label for="Wow Momos">Wow momos</label>
-                        </div>
-                        <div class="option">
-                          <input type="radio" class="radio" id="tutorials" name="category" />
-                          <label for="Calinifornia Shark">Calinifornia Shark</label>
-                        </div>
-                        <div class="option">
-                          <input type="radio" class="radio" id="tutorials" name="category" />
-                          <label for="Divine French">Divine French</label>
-                        </div>
-                        <div class="option">
-                          <input type="radio" class="radio" id="tutorials" name="category" />
-                          <label for="Royal Andhra Spice">Royal Andhra Spice</label>
-                        </div>
-                        <div class="option">
-                          <input type="radio" class="radio" id="tutorials" name="category" />
-                          <label for="Indian pavillon resturant">Indian pavillon resturant</label>
-                        </div>
-                        <div class="option">
-                          <input type="radio" class="radio" id="tutorials" name="category" />
-                          <label for="Tandoori cafe">Tandoori cafe</label>
-                        </div>
-                        <div class="option">
-                          <input type="radio" class="radio" id="tutorials" name="category" />
-                          <label for="President Hotel">President Hotel</label>
-                        </div>
-                        <div class="option">
-                          <input type="radio" class="radio" id="tutorials" name="category" />
-                          <label for="Barbeque Nation">Barbeque Nation</label>
-                        </div>
-                        <div class="option">
-                          <input type="radio" class="radio" id="tutorials" name="category" />
-                          <label for="Truffles">Truffles</label>
-                        </div>
+                        {% for i in restaurants %}
+                          <div class="option">
+                            <input type="radio" class="radio" id="film" name="category" />
+                            <label for="Blue plate">{{i.Name}}</label>
+                          </div>
+                        {% endfor %}
                       </div>
               
                       <div class="selected">
@@ -150,7 +69,7 @@
                 <div id="submit">
                     <input type="submit" value="SUBMIT" id="submit">
                 </div>
-                <script src="../static/index.js"></script>
+                <script src="../../static/index.js"></script>
 
 
             </form>
