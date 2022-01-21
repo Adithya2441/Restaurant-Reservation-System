@@ -64,91 +64,18 @@
     <h1 class="heading">  <span>Delhi</span> </h1>
 
     <div class="box-container">
-
-        <div class="box">
-            <img class="image" src="../static/images/s-img-1.jpg" alt="">
-            <div class="content">                
-                <h3>Yard house </h3>
-                <p>Veg/Non-Veg</p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                </div>              
+        {% for i in delhi %}
+            <div class="box">
+                <img class="image" src={{i.Image.url}} alt="">
+                <div class="content">                
+                    <h3>{{i.Name}}</h3>
+                    <h4>Contact : {{i.Phone_No}}</h4> 
+                    <h4>Table Booking Price : {{i.Table_Price}}</h4>
+                    <h4>Food Type : {{i.Type}}</h4>
+                </div>
             </div>
-        </div>
-        <div class="box">
-            <img class="image" src="../static/images/s-img-2.jpg" alt="">
-            <div class="content">                
-                <h3>Veg Gulati</h3>
-                <p>Pure-veg</p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                </div>                
-            </div>
-        </div>
-        <div class="box">
-            <img class="image" src="../static/images/s-img-3.jpg" alt="">
-            <div class="content">                
-                <h3>Hollywood cafe</h3>
-                <p>veg/Non-veg</p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                </div>              
-            </div>
-        </div>
-        <div class="box">
-            <img class="image" src="../static/images/s-img-4.jpg" alt="">
-            <div class="content">                
-                <h3>Occean Prime</h3>
-                <p>veg/Non-veg</p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                </div>               
-            </div>
-        </div>
-        <div class="box">
-            <img class="image" src="../static/images/s-img-5.jpg" alt="">
-            <div class="content">                
-                <h3>Olive Garden</h3>
-                <p>Pure-veg</p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                </div>               
-            </div>
-        </div>
-        <div class="box">
-            <img class="image" src="../static/images/tamra.jpg" alt="">
-            <div class="content">                
-                <h3>The Hans Hotel</h3>
-                <p>Pure-veg</p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                </div>                
-            </div>
-        </div>
+        {% endfor %}
+    </div>
 
 <!-- speciality section starts  -->
 
@@ -157,92 +84,17 @@
     <h1 class="heading">  <span>bangalore</span> </h1>
 
     <div class="box-container">
-
-        <div class="box">
-            <img class="image" src="../static/images/r-img-2.jpg" alt="">
-            <div class="content">                
-                <h3>Royal Andhra Spice </h3>
-                <p>Veg/Non-Veg</p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                </div>                
+        {% for i in bangalore %}
+            <div class="box">
+                <img class="image" src={{i.Image.url}} alt="">
+                <div class="content">                
+                    <h3>{{i.Name}}</h3>
+                    <h4>Contact : {{i.Phone_No}}</h4> 
+                    <h4>Table Booking Price : {{i.Table_Price}}</h4>
+                    <h4>Food Type : {{i.Type}}</h4>
+                </div>
             </div>
-        </div>
-        <div class="box">
-            <img class="image" src="../static/images/r-img-4.jpg" alt="">
-            <div class="content">                
-                <h3>Indian Paviillon Resturant</h3>
-                <p>Pure-veg</p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                </div>                
-            </div>
-        </div>
-        <div class="box">
-            <img class="image" src="../static/images/r-img-6.jpg" alt="">
-            <div class="content">                
-                <h3>Tandoori Cafe</h3>
-                <p>Veg/Non-veg</p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                </div>               
-            </div>
-        </div>
-        <div class="box">
-            <img class="image" src="../static/images/r-img-7.jpg" alt="">
-            <div class="content">                
-                <h3>President Hotel</h3>
-                <p>Pure-veg</p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                </div>               
-            </div>
-        </div>
-        <div class="box">
-            <img class="image" src="../static/images/r-img-8.jpg" alt="">
-            <div class="content">                
-                <h3>Barbeque Nation</h3>
-                <p>Veg/Non-Veg</p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                </div>              
-            </div>
-        </div>
-        <div class="box">
-            <img class="image" src="../static/images/r-img-3.jpg" alt="">
-            <div class="content">                
-                <h3>Truffles</h3>
-                <p>Veg/Non-Veg</p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                </div>                
-            </div>
-        </div>
-
+        {% endfor %}
     </div>
 
 </section>
@@ -256,135 +108,22 @@
     <h1 class="heading">  <span>mumbai</span></h1>
 
     <div class="box-container">
-
-        <div class="box">            
-            <img src="../static/images/r-6.jpg" alt="">
-            <h3> Calinfornia Shark</h3>
-            <p>Veg/Non-Veg</p>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-            </div>           
-        </div>
-        <div class="box">            
-            <img src="../static/images/r-1.jpg" alt="">
-            <h3>Smoking Fish</h3>
-            <p>Veg/Non-Veg</p>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-            </div>            
-        </div>
-        <div class="box">            
-            <img src="../static/images/r-2.jpg" alt="">
-            <h3>Denisons </h3>
-            <p>Veg</p>            
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-            </div>           
-        </div>
-        <div class="box">            
-            <img src="../static/images/r-3.jpg" alt="">
-            <h3>hotel Taj</h3>
-            <p>Veg/Non-Veg</p>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-            </div>          
-        </div>
-        <div class="box">            
-            <img src="../static/images/r-4.jpg" alt="">
-            <h3>Wow Momos</h3>
-            <p>Veg/Non-Veg</p>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-            </div>            
-        </div>
-        <div class="box">            
-            <img src="../static/images/r-5.jpg" alt="">
-            <h3>Divine French</h3>
-            <p>Veg/Non-Veg</p>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-            </div>            
-        </div>
-
+        {% for i in mumbai %}
+            <div class="box">
+                <img class="image" src={{i.Image.url}} alt="">
+                <div class="content">                
+                    <h3>{{i.Name}}</h3>
+                    <h4>Contact : {{i.Phone_No}}</h4> 
+                    <h4>Table Booking Price : {{i.Table_Price}}</h4>
+                    <h4>Food Type : {{i.Type}}</h4>
+                </div>
+            </div>
+        {% endfor %}
     </div>
 
 </section>
 
 <!-- mumbai section ends -->
-
-<!-- review section starts  -->
-
-<section class="review" id="review">
-
-    <h1 class="heading"> our customers <span>reviews</span> </h1>
-
-    <div class="box-container">
-
-        <div class="box">
-            <img src="../static/images/pic1.png" alt="">
-            <h3>Audrey</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-            </div>
-            <p>By using the website to book, I have saved a lot of time in waiting for tables to get empty in the Resturant</p>
-        </div>
-        <div class="box">
-            <img src="../static/images/pic2.png" alt="">
-            <h3>john deo</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-            </div>           
-        </div>
-        <div class="box">
-            <img src="../static/images/pic3.png" alt="">
-            <h3>john deo</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-            </div>
-            
-        </div>
-
-    </div>
-
-</section>
-
-<!-- review section ends -->
 
 <!-- scroll top button  -->
 <a href="#home" class="fas fa-angle-up" id="scroll-top"></a>

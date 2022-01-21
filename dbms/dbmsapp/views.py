@@ -1,4 +1,5 @@
 from asyncio.windows_events import NULL
+from email.headerregistry import Address
 import re
 from django.shortcuts import render ,redirect
 from .models import *
@@ -49,8 +50,12 @@ def authenticate_login(request):
     return render(request,'authenticate_login.html')
 
 def main_page(request):
-    list = Restaurant.objects.all()
+    list1 = Restaurant.objects.filter(Address='Delhi')
+    list2 = Restaurant.objects.filter(Address='Bangalore')
+    list3 = Restaurant.objects.filter(Address='Mumbai')
     context ={
-        'restaurants' : list
+        'delhi' : list1,
+        'bangalore' : list2,
+        'mumbai' : list3
     }
     return render(request,'text.html',context)
