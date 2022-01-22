@@ -35,8 +35,12 @@
 .form-text h2{
   color: black;
   font-family: 'Akaya Telivigala', cursive;
-  font-size: 20px;
+  font-size: 30px;
 }
+.menu-topic {
+  margin-right: 20em;
+}
+
 .form-text p{
     color: rgb(0, 0, 0);
     font-family: 'Akaya Telivigala', cursive;
@@ -191,6 +195,28 @@
   display: none;
 }
 
+.form__button {
+  width: 100%;
+  padding: 0.75rem 0.75rem;
+  font-weight: bold;
+  color: #000000;
+  border: none;
+  border-radius: var(--border-radius);
+  outline-style: solid;
+  outline-color: black;
+  cursor: pointer;
+  background: #ffca00;
+  font-family: 'Akaya Telivigala', cursive;
+  font-size: 20px;
+}
+
+.form__button:hover {
+  background: rgb(255, 255, 255);
+}
+
+.form__button:active {
+  transform: scale(0.98);
+}
 
 @media screen and (max-width:710px) {
     .main-form{

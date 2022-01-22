@@ -95,3 +95,6 @@ def menu(request):
         'nonveg' : list2
     }
     return render(request,'menu.html',context)
+
+def confirmed(request):
+    return render(request,'confirmed.html')

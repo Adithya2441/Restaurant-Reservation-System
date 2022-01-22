@@ -12,11 +12,12 @@
 <body class="main_bg">
     <div class="form">
         <div class="form-text">
-            <h1><span><img src="../../static/images/art-1.png" alt=""></span>Book Now<span><img src="../../static/images/art-1.png" alt=""></span></h1>
-            <h2><a href="../">Main Page</a></h2>            
+            <h1><span><img src="../../static/images/art-1.png" alt=""></span>Book Now<span><img src="../../static/images/art-1.png" alt=""></span></h1>            
+            <h2><span style="padding-right: 5em;"><a href="../">Main Page</a></span><span><a href="../menu">View Menu</a></span></h2>
         </div>
         <div class="main-form">
-            <form action="index.php" method="post">
+            <form action="{% url 'confirmed' %}" method="post">
+                {% csrf_token %}
                 <div>
                     <span>Reservation Under Name ?</span>
                     <input type="text" name="name" id="name" placeholder="Write your name here..." required>
@@ -70,9 +71,8 @@
                       </div>
                     </div>
                   </div>
-                
                 <div id="submit">
-                    <input type="submit" value="SUBMIT" id="submit">
+                    <button class="form__button" type="submit">SUBMIT</button>
                 </div>
                 <script src="../../static/index.js"></script>
 
