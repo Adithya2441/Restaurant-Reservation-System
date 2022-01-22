@@ -2,6 +2,7 @@ from asyncio.windows_events import NULL
 from email.headerregistry import Address
 import re
 from django.shortcuts import render ,redirect
+from django.template import context
 from .models import *
 from django.contrib import messages
 
@@ -79,4 +80,10 @@ def book_now(request):
     return render(request,'index.html',context)
 
 def menu(request):
-    return render(request,'menu.html')
+    list1 = Menu_Veg.objects.all()
+    list2 = Menu_NonVeg.objects.all()
+    context = {
+        'veg' : list1,
+        'nonveg' : list2
+    }
+    return render(request,'menu.html',context)
