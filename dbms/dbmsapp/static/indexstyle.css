@@ -32,6 +32,11 @@
     font-size: 40px;
     margin-bottom: 20px;
 }
+.form-text h2{
+  color: black;
+  font-family: 'Akaya Telivigala', cursive;
+  font-size: 20px;
+}
 .form-text p{
     color: rgb(0, 0, 0);
     font-family: 'Akaya Telivigala', cursive;

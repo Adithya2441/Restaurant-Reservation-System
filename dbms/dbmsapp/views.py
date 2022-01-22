@@ -54,18 +54,10 @@ def main_page(request):
     list1 = Restaurant.objects.filter(Address='Delhi')
     list2 = Restaurant.objects.filter(Address='Bangalore')
     list3 = Restaurant.objects.filter(Address='Mumbai')
-    list4 = Valet.objects.all()
-    list5 = Manager.objects.all()
-    list6 = []
-    for i in list4:
-        if i.Manager_ID in list5:
-            list6.append(i.Manager_ID)
-    
     context ={
         'delhi' : list1,
         'bangalore' : list2,
         'mumbai' : list3,
-        'valet_managers' : list6
     }
     return render(request,'text.html',context)
 
@@ -76,7 +68,23 @@ def book_now(request):
         'tables' : list,
         'restaurants' : list1
     }
-
+    if request.method == "POST":
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        seats = request.POST.get("seats")
+        time = request.POST.get("time")
+        date = request.POST.get("date")
+        phno = request.POST.get("phno")
+        vehicle_num = request.POST.get("vehicle_num")
+        restaurant = request.POST.get("restaurant")
+        obj = Restaurant.object.get(Name=restaurant)
+        obj1 = Manager.object.get(Manager_ID=obj.Manager_ID)
+        obj2 = Valet.objects.all()
+        for i in obj2:
+            if i.Manager_ID == obj1.Manager_ID:
+                valet = i.Valet_ID
+        cus = Customer(Customer_Name=name,Vehicle_Number=vehicle_num,Email=email,Phone_No=phno,Valet_ID=valet)
+        cus.save()
     return render(request,'index.html',context)
 
 def menu(request):
