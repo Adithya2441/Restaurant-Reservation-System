@@ -33,10 +33,10 @@ def authenticate_login(request):
     if request.method == "POST":
         username = request.POST.get("username")
         password = request.POST.get("password")
-        obj=Register.objects.get(username=username)
+        obj=Register.objects.filter(username=username)
         try:
             if obj is not None:
-                if obj.password1==password:
+                if obj[0].password1==password:
                     messages.success(request,'Logged In Successfully')
                     return redirect('main_page')
                 else:
@@ -53,10 +53,18 @@ def main_page(request):
     list1 = Restaurant.objects.filter(Address='Delhi')
     list2 = Restaurant.objects.filter(Address='Bangalore')
     list3 = Restaurant.objects.filter(Address='Mumbai')
+    list4 = Valet.objects.all()
+    list5 = Manager.objects.all()
+    list6 = []
+    for i in list4:
+        if i.Manager_ID in list5:
+            list6.append(i.Manager_ID)
+    
     context ={
         'delhi' : list1,
         'bangalore' : list2,
-        'mumbai' : list3
+        'mumbai' : list3,
+        'valet_managers' : list6
     }
     return render(request,'text.html',context)
 
@@ -67,6 +75,7 @@ def book_now(request):
         'tables' : list,
         'restaurants' : list1
     }
+
     return render(request,'index.html',context)
 
 def menu(request):

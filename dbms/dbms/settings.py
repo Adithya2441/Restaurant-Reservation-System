@@ -131,3 +131,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_ROOT = os.path.join(BASE_DIR/'dbmsapp/RestoImg')
 MEDIA_URL = '/dmsapp/RestoImg/'
+
+DATE_INPUT_FORMATS = ['%d-%m-%Y']

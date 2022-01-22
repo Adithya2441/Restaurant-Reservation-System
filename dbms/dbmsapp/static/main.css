@@ -131,7 +131,7 @@ body {
 
 .error-message-display {
     position: absolute;
-    top: 25vh;
+    top: 30vh;
     text-align: center;
     z-index: 999;
     color: #cc3333;

@@ -4,6 +4,7 @@ from re import T
 from sqlite3 import Date
 from statistics import mode
 from tkinter import CASCADE
+from django.conf import settings
 from django.db import models
 
 class Register(models.Model):
@@ -80,9 +81,10 @@ class Valet(models.Model):
 class Customer(models.Model):
     Customer_ID = models.AutoField(primary_key=True)
     Customer_Name = models.CharField(max_length=25)
-    Vehicle_Number = models.CharField(max_length=15)
+    Vehicle_Number = models.CharField(max_length=15,null=True,blank=True)
+    Email = models.EmailField(default=None)
     Phone_No = models.CharField(max_length=12)
-    Valet_ID = models.ForeignKey(Valet,on_delete=models.CASCADE)
+    Valet_ID = models.ForeignKey(Valet,on_delete=models.SET_NULL,null=True,blank=True)
 
     class Meta:
         db_table = 'Customer'
