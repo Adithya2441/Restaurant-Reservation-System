@@ -6,7 +6,7 @@
 }
 
 .main_bg{
-    background-image: url(../static/images/background.jpg);
+    background-image: url(../static/images/home-bg.jpg);
     max-width: 1280px;
     height: 800px;
     display: flex;
@@ -27,13 +27,13 @@
 
 }
 .form-text h1{
-    color: #fff;
+    color: rgb(0, 0, 0);
     font-family: 'Akaya Telivigala', cursive;
     font-size: 40px;
     margin-bottom: 20px;
 }
 .form-text p{
-    color: #fff;
+    color: rgb(0, 0, 0);
     font-family: 'Akaya Telivigala', cursive;
     font-size: large;
 }
@@ -49,7 +49,7 @@
     background: none;
     border: 1px solid #ffca00;;
     font-size: 20px;
-    color: #fff;
+    color: rgb(0, 0, 0);
     outline: none;
     padding: 3px 0 3px 10px;
     margin-top: 10px;
@@ -57,10 +57,10 @@
 .main-form div select{
     width: 104%;
     font-family: 'Akaya Telivigala', cursive;
-    background: rgb(32, 30, 30);
+    background: rgb(255, 255, 255);
     border: 1px solid #ffca00;;
     font-size: 20px;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     outline: none;
     padding: 3px 0 3px 10px;
     margin-top: 10px;
@@ -69,7 +69,7 @@
 .main-form div span{
     width: 100%;
     font-family: 'Akaya Telivigala', cursive;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-size: 25px;
 }
 
@@ -88,12 +88,12 @@
     font-family: 'Akaya Telivigala', cursive;
     width: 200px;
     background-color: black !important;
-    color: #fff !important;
+    color: rgb(0, 0, 0) !important;
 }
 #submit input:active{
     font-size: 19px;
     background-color: rgb(46, 20, 5) !important;
-    color: #fff !important;
+    color: rgb(0, 0, 0) !important;
 }
 .container {
   margin-top: 100px;
@@ -106,12 +106,12 @@
   flex-direction: column;
 }
 .container h2 {
-  color: white;
+  color: rgb(0, 0, 0);
   font-family: 'Akaya Telivigala',  cursive;
 }
 
 .select-box .options-container {
-  background: #ccffff;
+  background: #ffca00;
   color: black;
   max-height: 0;
   width: 100%;
@@ -129,7 +129,7 @@
     background: none;
     border: 1px solid #ffca00;;
     font-size: 20px;
-    color: #fff;
+    color: rgb(0, 0, 0);
     outline: none;
     padding: 3px 0 3px 10px;
     margin-top: 10p
@@ -167,7 +167,7 @@
 }
 
 .select-box .options-container::-webkit-scrollbar-thumb {
-  background: #fff;
+  background: rgb(255, 255, 255);
   border-radius: 0 4px 4px 0;
 }
 

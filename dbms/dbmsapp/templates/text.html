@@ -49,7 +49,7 @@
         <h3>Come Dine with US</h3>
         <h5>Book a table at the Restaurant you want NOW!!!</h5>
               <a href="/main/booknow/" class="btn">Book now</a>
-              <p></p>
+        <h5 style="margin-top: 3em;">Scroll Down to View the amazing restaurants where you can enjoy your meal.</h5>
     </div>
 
     <div class="image">
@@ -67,12 +67,13 @@
     <div class="box-container">
         {% for i in delhi %}
             <div class="box">
-                <img class="image" src={{i.Image.url}} alt="">
+                <a href="/main/booknow"><img class="image" src={{i.Image.url}} alt=""></a>
                 <div class="content">                
                     <h3>{{i.Name}}</h3>
                     <h4>Contact : {{i.Phone_No}}</h4> 
                     <h4>Table Booking Price : Rs {{i.Table_Price}}</h4>
                     <h4>Food Type : {{i.Type}}</h4>
+                    <a href="/main/booknow/" class="btn">Book now</a>
                 </div>
             </div>
         {% endfor %}
@@ -87,12 +88,13 @@
     <div class="box-container">
         {% for i in bangalore %}
             <div class="box">
-                <img class="image" src={{i.Image.url}} alt="">
+                <a href="/main/booknow"><img class="image" src={{i.Image.url}} alt=""></a>
                 <div class="content">                
                     <h3>{{i.Name}}</h3>
                     <h4>Contact : {{i.Phone_No}}</h4> 
                     <h4>Table Booking Price : Rs {{i.Table_Price}}</h4>
                     <h4>Food Type : {{i.Type}}</h4>
+                    <a href="/main/booknow/" class="btn">Book now</a>
                 </div>
             </div>
         {% endfor %}
@@ -111,12 +113,13 @@
     <div class="box-container">
         {% for i in mumbai %}
             <div class="box">
-                <img class="image" src={{i.Image.url}} alt="">
+                <a href="/main/booknow"><img class="image" src={{i.Image.url}} alt=""></a>
                 <div class="content">                
                     <h3>{{i.Name}}</h3>
                     <h4>Contact : {{i.Phone_No}}</h4> 
                     <h4>Table Booking Price : Rs {{i.Table_Price}}</h4>
                     <h4>Food Type : {{i.Type}}</h4>
+                    <a href="/main/booknow/" class="btn">Book now</a>
                 </div>
             </div>
         {% endfor %}
