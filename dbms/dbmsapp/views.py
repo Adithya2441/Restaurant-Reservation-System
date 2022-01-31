@@ -21,6 +21,7 @@ def login(request):
             password2 = request.POST.get("password2")
             if password1==password2:
                 obj=Register(username=username,email=email,password1=password1,password2=password2)
+                print(obj)
                 obj.save()
             else:
                 messages.error(request,'Password doesnot match')
@@ -77,13 +78,14 @@ def book_now(request):
         phno = request.POST.get("phno")
         vehicle_num = request.POST.get("vehicle_num")
         restaurant = request.POST.get("restaurant")
-        obj = Restaurant.object.get(Name=restaurant)
-        obj1 = Manager.object.get(Manager_ID=obj.Manager_ID)
+        obj = Restaurant.objects.get(Name=restaurant)
+        obj1 = Manager.objects.get(Manager_ID=obj.Manager_ID)
         obj2 = Valet.objects.all()
         for i in obj2:
             if i.Manager_ID == obj1.Manager_ID:
                 valet = i.Valet_ID
         cus = Customer(Customer_Name=name,Vehicle_Number=vehicle_num,Email=email,Phone_No=phno,Valet_ID=valet)
+        print(cus)
         cus.save()
     return render(request,'index.html',context)
 
