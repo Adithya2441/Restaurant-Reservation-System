@@ -79,14 +79,13 @@ def book_now(request):
         vehicle_num = request.POST.get("vehicle_num")
         restaurant = request.POST.get("restaurant")
         obj = Restaurant.objects.get(Name=restaurant)
-        obj1 = Manager.objects.get(Manager_ID=obj.Manager_ID)
-        obj2 = Valet.objects.all()
-        for i in obj2:
-            if i.Manager_ID == obj1.Manager_ID:
-                valet = i.Valet_ID
-        cus = Customer(Customer_Name=name,Vehicle_Number=vehicle_num,Email=email,Phone_No=phno,Valet_ID=valet)
-        print(cus)
+        obj1 = Manager.objects.get(Restaurant_ID=obj.Restaurant_ID)
+        valet_obj = Valet.objects.get(Manager_ID = obj1.Manager_ID)
+        table = Table.objects.get(No_Of_Seats=seats)
+        cus = Customer(Customer_Name=name,Vehicle_Number=vehicle_num,Email=email,Phone_No=phno,Valet_ID=valet_obj)
         cus.save()
+        book = Booking(Date=date,Time=time,Manager_ID=obj1,Restaurant_ID=obj,Table_ID=table,Customer_ID=cus)
+        book.save()
     return render(request,'index.html',context)
 
 def menu(request):

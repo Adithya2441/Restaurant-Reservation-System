@@ -16,7 +16,7 @@
             <h2><span style="padding-right: 5em;"><a href="../">Main Page</a></span><span><a href="../menu">View Menu</a></span></h2>
         </div>
         <div class="main-form">
-            <form action="{% url 'confirmed' %}" method="post">
+            <form action="{% url 'booknow' %}" method="post">
                 {% csrf_token %}
                 <div>
                     <span>Reservation Under Name ?</span>
@@ -30,9 +30,9 @@
                     <!-- <---this is the select option--->
                     <span>Seats Required ?</span>
                     <select name="seats" id="people" required>
-                        <option value=""></option>
+                        <option type="number" value=""></option>
                         {% for i in tables %}
-                        <option value="{{i}}">{{i.No_Of_Seats}}</option>
+                        <option  type="number" value="{{i.No_Of_Seats}}">{{i.No_Of_Seats}}</option>
                         {% endfor %}
                     </select>
                     <!-- <---this is the select option--->
@@ -53,24 +53,18 @@
                     <span>Your Vehicle number ?</span>
                     <input type="text" name="vehicle_num" id="vehicle" placeholder="XX 00 YY 0000" pattern="[A-Z]{2} [0-9]{2} [A-Z]{2} [0-9]{4}">
                 </div>
-                <div class="container">
-                    <h2>Select the  Resturant</h2>
-              
-                    <div class="select-box">
-                      <div class="options-container">
+                <div>
+                    <!-- <---this is the select option--->
+                    <span>Select the Restaurants</span>
+                    <select name="restaurant" id="people" required>
+                        <option disabled selected value>Select the Restaurants</option>
                         {% for i in restaurants %}
-                          <div class="option">
-                            <input type="radio" class="radio" id="film" name="restaurant">
-                            <label for="Blue plate">{{i.Name}}</label>
-                          </div>
+                            <option value="{{i.Name}}">{{i.Name}}</option>
                         {% endfor %}
-                      </div>
-              
-                      <div class="selected">
-                        Select the Resturant
-                      </div>
-                    </div>
-                  </div>
+                    </select>
+                    <!-- <---this is the select option--->
+                
+                </div>
                 <div id="submit">
                     <button class="form__button" type="submit">SUBMIT</button>
                 </div>
