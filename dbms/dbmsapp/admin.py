@@ -1,6 +1,6 @@
 from atexit import register
 from django.contrib import admin
-from .models import Booking, Customer, Manager, Meal, Meal_Order, Meals, Meals_Order, Menu_NonVeg, Menu_Veg, Register, Restaurant, Table, Valet
+from .models import *
 
 admin.site.register(Register)
 admin.site.register(Restaurant)
