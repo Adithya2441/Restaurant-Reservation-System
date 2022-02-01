@@ -100,7 +100,9 @@ class Booking(models.Model):
 
     class Meta:
         db_table = 'Booking'
-
+    
+    def get_absolute_url(self):
+        return "confirmed/{id}".format(id=self.Booking_ID)
 
 class Meals_Order(models.Model):
     Meal_No = models.AutoField(primary_key=True)

@@ -9,5 +9,5 @@ urlpatterns = [
     path('main/',views.main_page,name='main_page'),
     path('main/booknow/',views.book_now,name='booknow'),
     path('main/menu/',views.menu,name='menu'),
-    path('main/booknow/confirmed',views.confirmed,name='confirmed'),
+    path('main/booknow/confirmed/<str:id>',views.confirmed,name='confirmed'),
 ]

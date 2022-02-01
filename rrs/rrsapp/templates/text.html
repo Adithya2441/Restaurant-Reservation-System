@@ -26,9 +26,9 @@
 
     <nav class="navbar">
         <a href="#home">Home</a>
-        <a href="#Delhi">Delhi</a>
         <a href="#bangalore">Bangalore</a>
-        <a href="#mumbai">Mumbai</a>       
+        <a href="#mumbai">Mumbai</a>
+        <a href="#Delhi">Delhi</a>       
         <a href="../main/menu">Menu</a>
         <a href="../">logout</a>
     </nav>
@@ -59,30 +59,7 @@
 </section>
 
 <!-- home section ends -->
-<!--delhi section starts-->
-<section class="Delhi" id="Delhi">
 
-    <h1 class="heading">  <span>Delhi</span> </h1>
-
-    <div class="box-container">
-        {% for i in delhi %}
-            <div class="box">
-                <a href="/main/booknow"><img class="image" src={{i.Image.url}} alt=""></a>
-                <div class="content">                
-                    <h3>{{i.Name}}</h3>
-                    <h4>Contact : {{i.Phone_No}}</h4> 
-                    <h4>Table Booking Price : Rs {{i.Table_Price}}</h4>
-                    <h4>Food Type : {{i.Type}}</h4>
-                    {% for j in valet_managers %}
-                        
-                    {% endfor %}
-                    <a href="/main/booknow/" class="btn">Book now</a>
-                </div>
-            </div>
-        {% endfor %}
-    </div>
-
-<!-- speciality section starts  -->
 
 <section class="bangalore" id="bangalore">
 
@@ -131,6 +108,30 @@
 </section>
 
 <!-- mumbai section ends -->
+<!--delhi section starts-->
+<section class="Delhi" id="Delhi">
+
+    <h1 class="heading">  <span>Delhi</span> </h1>
+
+    <div class="box-container">
+        {% for i in delhi %}
+            <div class="box">
+                <a href="/main/booknow"><img class="image" src={{i.Image.url}} alt=""></a>
+                <div class="content">                
+                    <h3>{{i.Name}}</h3>
+                    <h4>Contact : {{i.Phone_No}}</h4> 
+                    <h4>Table Booking Price : Rs {{i.Table_Price}}</h4>
+                    <h4>Food Type : {{i.Type}}</h4>
+                    {% for j in valet_managers %}
+                        
+                    {% endfor %}
+                    <a href="/main/booknow/" class="btn">Book now</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+<!-- speciality section starts  -->
 
 <!-- scroll top button  -->
 <a href="#home" class="fas fa-angle-up" id="scroll-top"></a>

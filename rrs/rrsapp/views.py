@@ -1,5 +1,6 @@
 from asyncio.windows_events import NULL
 from email.headerregistry import Address
+from operator import index
 import re
 from django.shortcuts import render ,redirect
 from django.template import context
@@ -86,6 +87,11 @@ def book_now(request):
         cus.save()
         book = Booking(Date=date,Time=time,Manager_ID=obj1,Restaurant_ID=obj,Table_ID=table,Customer_ID=cus)
         book.save()
+        if(book!=None):
+            return redirect(book)
+        else:
+            messages.error(request,'Booking Failed Please Try Again')
+            return redirect('index')
     return render(request,'index.html',context)
 
 def menu(request):
@@ -97,5 +103,19 @@ def menu(request):
     }
     return render(request,'menu.html',context)
 
-def confirmed(request):
-    return render(request,'confirmed.html')
+def confirmed(request, id):
+    obj = Booking.objects.get(Booking_ID = id)
+    cus = obj.Customer_ID
+    restaurant = obj.Restaurant_ID
+    table = obj.Table_ID
+    manager = obj.Manager_ID
+    valet = Valet.objects.get(Manager_ID = manager.Manager_ID)
+    context = {
+        'booking' : obj,
+        'customer' : cus,
+        'restaurant' : restaurant,
+        'table' : table,
+        'manager' : manager,
+        'valet' : valet
+    }
+    return render(request,'confirmed.html',context)
