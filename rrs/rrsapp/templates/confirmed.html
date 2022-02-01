@@ -9,9 +9,39 @@
     <title>Booking Confirmed</title>
 </head>
 
-<body class="main_bg">
-    <h1 class="heading" style="color: forestgreen">Booking Confirmed</h1>
-
+<body class="main_bg" style="background-image: url(../../../static/images/home-bg.jpg);">
+    <h1 class="heading" style="color: forestgreen ; font-size: 40px">Booking Confirmed</h1>
+    <h1 class="heading">Booking details</h1>
+        <h1 class="heading" style="font-size: 25px; margin-right: 10em;">  
+            <span style="margin-left: 10em;">Restaurant Details</span>
+            <span style="margin-left: 8em;">Other Details</span>
+        </h1>
+    <section class="bangalore" id="bangalore" style="width: max-content;">
+        <div class="box-container" style="margin-left: 32em;">
+                <div class="box">
+                    <img class="image" src={{restaurant.Image.url}} alt="">
+                    <div class="content">                
+                        <h3>{{restaurant.Name}}</h3>
+                        <h4>Contact : {{restaurant.Phone_No}}</h4> 
+                        <h4>Table Booking Price : Rs {{restaurant.Table_Price}}</h4>
+                        <h4>Food Type : {{restaurant.Type}}</h4>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="content" style="line-height: 3em; align-items: center;">
+                        <h3 style="margin-top: 2em;">Reservation Name : {{customer.Customer_Name}}</h3>
+                        <h3>Time : {{booking.Time}}</h3>
+                        <h3>Date : {{booking.Date}}</h3>
+                        <h3>Valet : {{valet.Valet_Name}}</h3>
+                        <h3>Manager : {{manager.Manager_Name}}</h3>
+                        <h3>Vehicle Number : {{customer.Vehicle_Number}}</h3>
+                        <h3>Email : <span style="text-transform: lowercase;">{{customer.Email}}</span></h3>
+                        <h3>Contact : {{customer.Phone_No}}</h3>
+                        <h3>Table for : {{table.No_Of_Seats}}</h3>
+                    </div>
+                </div>
+        </div>
+    </section>
 </body>
 
 </html>

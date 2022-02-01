@@ -312,6 +312,7 @@ header .navbar a:hover{
   display: flex;
   flex-wrap: wrap;
   gap:1.5rem;
+  justify-content: center;
 }
 
 .review .box-container .box{
