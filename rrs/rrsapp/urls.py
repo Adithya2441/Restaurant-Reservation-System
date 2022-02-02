@@ -10,4 +10,6 @@ urlpatterns = [
     path('main/booknow/',views.book_now,name='booknow'),
     path('main/menu/',views.menu,name='menu'),
     path('main/booknow/confirmed/<str:id>',views.confirmed,name='confirmed'),
+    path('main/booknow/delete/<str:id>',views.delete_booking,name='delete'),
+    path('main/booknow/update/<str:id>',views.update_booking,name='update'),
 ]

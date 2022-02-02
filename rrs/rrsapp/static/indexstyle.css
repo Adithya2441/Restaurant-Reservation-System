@@ -224,4 +224,11 @@
     }
 }
 
-/* make by ruhul amin */
+.error-message-display {
+  position: absolute;
+  top: 5vh;
+  text-align: center;
+  z-index: 999;
+  color: forestgreen;
+  font-size: large;
+}

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../static/indexstyle.css">
+    <link rel="stylesheet" href="../../../static/indexstyle.css">
     <title>Table booking</title>
 </head>
 
@@ -17,25 +17,24 @@
     {% endif %}
     <div class="form">
         <div class="form-text">
-            <h1><span><img src="../../static/images/art-1.png" alt=""></span>Book Now<span><img src="../../static/images/art-1.png" alt=""></span></h1>            
-            <h2><span style="padding-right: 5em;"><a href="../">Main Page</a></span><span><a href="../menu">View Menu</a></span></h2>
+            <h1><span><img src="../../../static/images/art-1.png" alt=""></span>Update Booking<span><img src="../../../static/images/art-1.png" alt=""></span></h1>
         </div>
         <div class="main-form">
-            <form action="{% url 'booknow' %}" method="post">
+            <form action="{% url 'update' booking.Booking_ID %}" method="post">
                 {% csrf_token %}
                 <div>
                     <span>Reservation Under Name ?</span>
-                    <input type="text" name="name" id="name" placeholder="Write your name here..." required>
+                    <input type="text" name="name" id="name" value="{{customer.Customer_Name}}" required>
                 </div>
                 <div>
                     <span>Your email address ?</span>
-                    <input type="email" name="email" id="name" placeholder="Write your email here..." required> 
+                    <input type="email" name="email" id="name" value="{{customer.Email}}" required> 
                 </div>
                 <div>
                     <!-- <---this is the select option--->
                     <span>Seats Required ?</span>
                     <select name="seats" id="people" required>
-                        <option type="number" value=""></option>
+                        <option type="number" value="{{table.No_Of_Seats}}">{{table.No_Of_Seats}}</option>
                         {% for i in tables %}
                         <option  type="number" value="{{i.No_Of_Seats}}">{{i.No_Of_Seats}}</option>
                         {% endfor %}
@@ -44,25 +43,27 @@
                 </div>
                 <div>
                     <span>What time ?</span>
-                    <input type="time" name="time" id="time" placeholder="Time" required>
+                    <span style="font-size: large;">{{booking.Time}}</span>
+                    <input type="time" name="time" id="time" value="{{booking.Time}}" required>
                 </div>
                 <div>
                     <span>What is the date ?</span>
-                    <input type="date" name="date" id="date" placeholder="date"  required>
+                    <span style="font-size: large;">{{booking.Date}}</span>
+                    <input type="date" name="date" id="date" value="{{booking.Date}}" required>
                 </div>
                 <div>
                     <span>Your phone number ?</span>
-                    <input type="tel" name="phno" id="number" placeholder="Write your number here..." pattern="[0-9]{10}" required>
+                    <input type="tel" name="phno" id="number" value="{{customer.Phone_No}}" pattern="[0-9]{10}" required>
                 </div>
                 <div>
                     <span>Your Vehicle number ?</span>
-                    <input type="text" name="vehicle_num" id="vehicle" placeholder="XX 00 YY 0000" pattern="[A-Z]{2} [0-9]{2} [A-Z]{2} [0-9]{4}">
+                    <input type="text" name="vehicle_num" id="vehicle" value="{{customer.Vehicle_Number}}" pattern="[A-Z]{2} [0-9]{2} [A-Z]{2} [0-9]{4}">
                 </div>
                 <div>
                     <!-- <---this is the select option--->
                     <span>Select the Restaurants</span>
                     <select name="restaurant" id="people" required>
-                        <option disabled selected value>Select the Restaurants</option>
+                        <option value="{{restaurant.Name}}">{{restaurant.Name}}</option>
                         {% for i in restaurants %}
                             <option value="{{i.Name}}">{{i.Name}}</option>
                         {% endfor %}
@@ -71,9 +72,9 @@
                 
                 </div>
                 <div id="submit">
-                    <button class="form__button" type="submit">SUBMIT</button>
+                    <button class="form__button" type="submit">UPDATE</button>
                 </div>
-                <script src="../../static/index.js"></script>
+                <script src="../../../static/index.js"></script>
 
 
             </form>

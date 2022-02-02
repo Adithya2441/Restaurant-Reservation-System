@@ -29,7 +29,7 @@
                 </div>
                 <div class="box">
                     <div class="content" style="line-height: 3em; align-items: center;">
-                        <h3 style="margin-top: 2em;">Reservation Name : {{customer.Customer_Name}}</h3>
+                        <h3>Reservation Name : {{customer.Customer_Name}}</h3>
                         <h3>Time : {{booking.Time}}</h3>
                         <h3>Date : {{booking.Date}}</h3>
                         <h3>Valet : {{valet.Valet_Name}}</h3>
@@ -38,6 +38,9 @@
                         <h3>Email : <span style="text-transform: lowercase;">{{customer.Email}}</span></h3>
                         <h3>Contact : {{customer.Phone_No}}</h3>
                         <h3>Table for : {{table.No_Of_Seats}}</h3>
+                        <h3>Booking ID : {{booking.Booking_ID}}</h3>
+                        <h4>Use this ID to access this booking page</h4>
+                        <h4 style="text-transform: lowercase;">(As confirmed/ID in the url)</h4>
                     </div>
                 </div>
         </div>
@@ -47,8 +50,9 @@
         <span style="margin-left: 13.3em;">Update Booking</span>
     </h1>
     <h1>
-        <span style="margin-left: 30em;"><a href="/main/booknow/" class="btn">Delete</a></span>
-        <span style="margin-left: 15em;"><a href="/main/booknow/" class="btn">Update</a></span>
+        <span style="margin-left: 30em;"><a href="{% url 'delete' booking.Booking_ID %}" class="btn">Delete</a></span>
+        <span style="margin-left: 15em;"><a href="{% url 'update' booking.Booking_ID %}" class="btn">Update</a></span>
     </h1>
+    <h1 class="heading" style="font-size: large;">For deleting or updating the booking after exiting the browser...Call the restaurant and they will do it for you</h1>
 </body>
 </html>

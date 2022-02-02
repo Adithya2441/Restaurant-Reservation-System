@@ -119,3 +119,56 @@ def confirmed(request, id):
         'valet' : valet
     }
     return render(request,'confirmed.html',context)
+
+def delete_booking(request,id):
+    obj = Booking.objects.get(Booking_ID = id)
+    cus = obj.Customer_ID
+    obj.delete()
+    cus.delete()
+    messages.error(request,'Booking Deleted Successfully')
+    return redirect('booknow')
+
+def update_booking(request,id):
+    obj = Booking.objects.get(Booking_ID = id)
+    cus = obj.Customer_ID
+    restaurant = obj.Restaurant_ID
+    table = obj.Table_ID
+    manager = obj.Manager_ID
+    valet = Valet.objects.get(Manager_ID = manager.Manager_ID)
+    list = Table.objects.all()
+    list1 = Restaurant.objects.all()
+    context = {
+        'booking' : obj,
+        'customer' : cus,
+        'restaurant' : restaurant,
+        'table' : table,
+        'manager' : manager,
+        'valet' : valet,
+        'tables' : list,
+        'restaurants' : list1
+    }
+    if request.method == "POST":
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        seats = request.POST.get("seats")
+        time = request.POST.get("time")
+        date = request.POST.get("date")
+        phno = request.POST.get("phno")
+        vehicle_num = request.POST.get("vehicle_num")
+        restaurant = request.POST.get("restaurant")
+        res = Restaurant.objects.get(Name=restaurant)
+        man = Manager.objects.get(Restaurant_ID=res.Restaurant_ID)
+        valet_obj = Valet.objects.get(Manager_ID = man.Manager_ID)
+        table = Table.objects.get(No_Of_Seats=seats)
+        Customer.objects.filter(Customer_ID=cus.Customer_ID).update(Customer_Name=name,Vehicle_Number=vehicle_num,Email=email,Phone_No=phno,Valet_ID=valet_obj)
+        Booking.objects.filter(Booking_ID=obj.Booking_ID).update(Date=date,Time=time,Manager_ID=man,Restaurant_ID=res,Table_ID=table,Customer_ID=cus)
+        context = {
+        'booking' : obj,
+        'customer' : cus,
+        'restaurant' : res,
+        'table' : table,
+        'manager' : man,
+        'valet' : valet
+        }
+        return render(request,'confirmed.html',context)
+    return render(request,'update.html',context)
