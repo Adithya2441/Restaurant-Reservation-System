@@ -106,8 +106,8 @@ class Booking(models.Model):
 
 class Meals_Order(models.Model):
     Meal_No = models.AutoField(primary_key=True)
-    Item_Veg = models.ForeignKey(Menu_Veg,on_delete=models.CASCADE,default=None)
-    Item_NonVeg = models.ForeignKey(Menu_NonVeg,on_delete=models.CASCADE,default=None)
+    Item_Veg = models.ForeignKey(Menu_Veg,on_delete=models.CASCADE,default=None,null=True,blank=True)
+    Item_NonVeg = models.ForeignKey(Menu_NonVeg,on_delete=models.CASCADE,default=None,null=True,blank=True)
     Quantity = models.IntegerField(default = 1)
     Booking_ID = models.ForeignKey(Booking,on_delete=models.CASCADE,default=None)
 
