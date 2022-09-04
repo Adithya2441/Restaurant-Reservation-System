@@ -1,5 +1,5 @@
 # dbms-mini
-Mini Project on Restaurant Reservation System using Django
+Project on Restaurant Reservation System using Django
 
 
 Tools used include
